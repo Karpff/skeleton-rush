@@ -83,6 +83,12 @@ class Zapper
       c.arc(this.x,this.y-26,3,0,Math.PI*2);
       c.fillStyle = "#DDEEFF";
       c.fill();
+      c.beginPath();
+      c.arc(this.x,this.y-26,2,0,Math.PI*2);
+      if(this.lazor>0)c.fillStyle = `rgb(0,${this.lazor*4+55},${this.lazor*51})`;
+      else if(this.power>=this.maxPower)c.fillStyle = "#00FF00";
+      else c.fillStyle = "#006600";
+      c.fill();
 
       if(this.target!=0&&this.lazor>0)
       {
@@ -125,6 +131,12 @@ class Zapper
       c.beginPath();
       c.arc(this.x,this.y-36,3,0,Math.PI*2);
       c.fillStyle = "#DDEEFF";
+      c.fill();
+      c.beginPath();
+      c.arc(this.x,this.y-36,2,0,Math.PI*2);
+      if(this.lazor>0)c.fillStyle = `rgb(0,${this.lazor*4+55},${this.lazor*51})`;
+      else if(this.power>=this.maxPower)c.fillStyle = "#00FF00";
+      else c.fillStyle = "#006600";
       c.fill();
 
       if(this.target!=0&&this.lazor>0)
@@ -173,6 +185,12 @@ class Zapper
       c.beginPath();
       c.arc(this.x,this.y-42,3,0,Math.PI*2);
       c.fillStyle = "#DDEEFF";
+      c.fill();
+      c.beginPath();
+      c.arc(this.x,this.y-42,2,0,Math.PI*2);
+      if(this.lazor>0)c.fillStyle = `rgb(0,${this.lazor*4+55},${this.lazor*51})`;
+      else if(this.power>=this.maxPower)c.fillStyle = "#00FF00";
+      else c.fillStyle = "#006600";
       c.fill();
 
       if(this.target!=0&&this.lazor>0)

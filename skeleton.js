@@ -97,7 +97,7 @@ class Skeleton
     //spawnInterval*=0.995;
     //maxSkeletons+=2/Math.sqrt(skeletonsDead+1);
     maxSkeletons = 10*Math.pow(1.1,(stage-1))*Math.pow(1.001,skeletonsDead);
-    spawnInterval = 60*Math.pow(0.96,(stage-1))*Math.pow(0.999,skeletonsDead);
+    spawnInterval = 60*Math.pow(0.98,(stage-1))*Math.pow(0.999,skeletonsDead);
     shadowChance = 0.01*Math.pow(1.03,(stage-1))*Math.pow(1.003,skeletonsDead);
     shadowChance = shadowChance>0.3?0.3:shadowChance;
     spawnInterval = spawnInterval<5?5:spawnInterval
