@@ -13,7 +13,7 @@ class Skeleton
     this.flip = false;
     this.dead = false;
     this.superDead = false;
-    this.spd = 0.9+stage*0.1+Math.random()*stage*0.1+Math.random()*0.5;
+    this.spd = 0.9+stage*0.1+Math.random()*stage*0.1+Math.random()*0.5+skeletonsDeadThisStage/500;
     this.type = "none";
     if(Math.random()<shadowChance)this.type="shadow";
   }
