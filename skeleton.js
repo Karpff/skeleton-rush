@@ -106,7 +106,12 @@ class Skeleton
     // console.log("sha: "+Math.round(shadowChance*100)/100);
     // console.log("spd-: "+Math.round((1+stage*0.1)*100)/100);
     // console.log("spd+: "+Math.round((1+stage*0.7)*100)/100);
-    if(reason!="click")
+    if(reason!="click" && powerCharge>=maxPower)
+    {
+      if(this.type != "none")gold+=2;
+      else gold+=1;
+    }
+    else if(reason!="click" || powerCharge>=maxPower)
     {
       if(this.type != "none")gold+=6;
       else gold+=3;
