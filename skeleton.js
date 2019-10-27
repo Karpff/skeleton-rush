@@ -92,15 +92,14 @@ class Skeleton
     this.currentFrame = 0;
     skeletonsAlive--;
     skeletonsDead++;
-    powerCharge++;
+    skeletonsDeadThisStage++;
+    if(stageChange<=0)powerCharge++;
     if(powerCharge > maxPower)powerCharge=maxPower;
-    //spawnInterval*=0.995;
-    //maxSkeletons+=2/Math.sqrt(skeletonsDead+1);
-    maxSkeletons = 10*Math.pow(1.1,(stage-1))*Math.pow(1.001,skeletonsDead);
-    spawnInterval = 60*Math.pow(0.98,(stage-1))*Math.pow(0.999,skeletonsDead);
-    shadowChance = 0.01*Math.pow(1.03,(stage-1))*Math.pow(1.003,skeletonsDead);
+    maxSkeletons = 10+stage-1+skeletonsDeadThisStage/50;
+    spawnInterval = 60*Math.pow(0.98,(stage-1))*Math.pow(0.997,skeletonsDeadThisStage);
+    shadowChance = 0.01*stage+0.0005*skeletonsDead;
     shadowChance = shadowChance>0.3?0.3:shadowChance;
-    spawnInterval = spawnInterval<5?5:spawnInterval
+    spawnInterval = spawnInterval<5?5:spawnInterval;
     // console.clear();
     // console.log("max: "+Math.round(maxSkeletons*100)/100);
     // console.log("int: "+Math.round(spawnInterval*100)/100);
