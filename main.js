@@ -294,7 +294,11 @@ function animate()
       c.font="40px Verdana";
       c.fillText(text,canvas.width/2-c.measureText(text).width/2,canvas.height/2-150);
       stageChange--;
-      if(stageChange==0)skeletonsDeadThisStage = 0;
+      if(stageChange==0)
+      {
+        skeletonsDeadThisStage = 0;
+        powerCharge = 0;
+      }
     }
     if(diamondHP>0)
     {
@@ -307,7 +311,7 @@ function animate()
     {
       maxSkeletons=0
       let text = "Game Over!"
-      let subtext = "You've got to "+stage+" stage and killed "+skeletonsDead+" skeletons!";
+      let subtext = "You've got to stage "+stage+" and killed "+skeletonsDead+" skeletons!";
       c.fillStyle = "white";
       c.font="50px Verdana";
       c.fillText(text,canvas.width/2-c.measureText(text).width/2,canvas.height/2-150);
